@@ -50,6 +50,8 @@ Once the user clicks in a game from the game list redirects to this page
     | Discount | Price | "Is this game relevant to you?" | About this Game |
     |----------|-------|---------------------------------|-----------------|
 
+> You don't have to follow the layout exactly like the given examples, use your creativity! Just keep in mind that all specified data from the API is required to be displyed.
+
 ## How to start?
 
 - Fork this repository
