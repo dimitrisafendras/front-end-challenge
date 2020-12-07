@@ -10,7 +10,7 @@ Your goal is to create a minimalist [**Steam Store**](https://store.steampowered
 
 - The project must be a `Single Page Application`
 - Pick your best framework. Such as `Angular`, `React` or `Vue`
-- Use [**Steam**](https://store.steampowered.com) store **clone/fake API**. ([API Overview](https://htb-steam-api.vercel.app))
+- Use [**Steam**](https://store.steampowered.com) store **clone/fake API**. ([API Overview](https://htb-steam-api.vercel.app)) made by HTB team.
 - `Responsive CSS` is a bonus. You're free to pick any CSS framework you'd like to
 - Follow **Steam** color scheme or very similar is a bonus
 
