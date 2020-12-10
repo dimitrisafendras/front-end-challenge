@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles(({ variables: { appHeight, appWidth } }) => ({
   app: {
     textAlign: 'center',
-    height: '100vh',
-    width: '100vw',
+    height: appHeight,
+    width: appWidth,
   },
 }));

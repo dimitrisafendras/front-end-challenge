@@ -3,6 +3,7 @@ import { merge } from 'lodash-es';
 import { typography } from './typography';
 import { palette } from './palette';
 import { color } from './color';
+import { variables } from './variables';
 
 export const muiTheme = responsiveFontSizes(
   createMuiTheme({
@@ -12,6 +13,7 @@ export const muiTheme = responsiveFontSizes(
     },
     palette,
     color,
+    variables,
   }),
 );
 
