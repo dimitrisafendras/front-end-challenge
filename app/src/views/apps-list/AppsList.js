@@ -4,6 +4,7 @@ import {
   fetchAllApps,
   selectAllApps,
 } from '../../models/allApps';
+import { AppListLayout } from '../../components/layouts/appListLayout';
 
 export const AppsList = () => {
   const dispatch = useDispatch();
@@ -21,11 +22,11 @@ export const AppsList = () => {
   console.log('allApps', allApps);
 
   return (
-    <div>
+    <AppListLayout>
       ujhgkjhg
       ujhgkjhg
       ujhgkjhg
       ujhgkjhg
-    </div>
+    </AppListLayout>
   );
 };
