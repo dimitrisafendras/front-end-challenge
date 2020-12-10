@@ -1,9 +1,15 @@
 import React from 'react';
-import './App.css';
 import { AppsList } from '../views';
+import { useStyles } from './styles';
 
-export const App = () => (
-  <div className="App">
-    <AppsList />
-  </div>
-);
+export const App = () => {
+  const {
+    app,
+  } = useStyles();
+
+  return (
+    <div className={app}>
+      <AppsList />
+    </div>
+  );
+};
