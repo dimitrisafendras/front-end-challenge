@@ -24,5 +24,6 @@ module.exports = {
     'react/button-has-type': 0,
     'no-use-before-define': 0,
     'no-undef': 0,
+    'linebreak-style': 0,
   },
 };
