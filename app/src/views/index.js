@@ -1,1 +1,1 @@
-export { Counter } from './counter';
+export { AppsList } from './apps-list';
