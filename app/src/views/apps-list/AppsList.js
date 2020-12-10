@@ -4,7 +4,7 @@ import {
   fetchAllApps,
   selectAllApps,
 } from '../../models/allApps';
-import { AppListLayout } from '../../components/layouts/appListLayout';
+import { AppListLayout } from '../../components';
 
 export const AppsList = () => {
   const dispatch = useDispatch();
