@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementAsync } from '../../controllers';
 import {
-  decrement, increment, incrementByAmount, selectCount,
+  decrement, increment, incrementByAmount, selectCount, incrementAsync,
 } from '../../models/counter';
 
 import styles from './Counter.module.css';

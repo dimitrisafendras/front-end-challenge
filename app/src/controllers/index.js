@@ -1,1 +1,0 @@
-export { incrementAsync } from './counter';

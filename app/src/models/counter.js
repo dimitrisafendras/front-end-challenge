@@ -21,6 +21,12 @@ const {
   },
 });
 
+export const incrementAsync = (amount) => (dispatch) => {
+  setTimeout(() => {
+    dispatch(incrementByAmount(amount));
+  }, 1000);
+};
+
 export const {
   increment,
   decrement,
