@@ -21,6 +21,11 @@ export const AppsList = () => {
   console.log('allApps', allApps);
 
   return (
-    <div />
+    <div>
+      ujhgkjhg
+      ujhgkjhg
+      ujhgkjhg
+      ujhgkjhg
+    </div>
   );
 };
