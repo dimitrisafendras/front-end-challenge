@@ -1,16 +1,16 @@
-const baseUrl = 'https://htb-steam-api.vercel.app';
+const baseUrl = 'https://htb-steam-api.vercel.app/api';
 
-const allAppsUrl = `${baseUrl}/api/apps`; // (List all available apps)
+const allAppsUrl = `${baseUrl}/apps`; // (List all available apps)
 
-const selectedAppUrl = (id) => `${baseUrl}/api/apps?appid=${id}`; // (List detailed information about specified app)
+const selectedAppUrl = (id) => `${baseUrl}/apps?appid=${id}`; // (List detailed information about specified app)
 
-const trendingAppsUrl = `${baseUrl}/api/apps?tab=new_and_trending`; // (List new and trending apps)
+const trendingAppsUrl = `${baseUrl}/apps?tab=new_and_trending`; // (List new and trending apps)
 
-const topSellerAppsUrl = `${baseUrl}/api/apps?tab=top_sellers`; // (List top seller apps)
+const topSellerAppsUrl = `${baseUrl}/apps?tab=top_sellers`; // (List top seller apps)
 
-const beingPlayedAppsUrl = `${baseUrl}/api/apps?tab=being_played`; // (List most being played apps)
+const beingPlayedAppsUrl = `${baseUrl}/apps?tab=being_played`; // (List most being played apps)
 
-const upcomingAppsUrl = `${baseUrl}/api/apps?tab=upcoming`; // (List future release apps)
+const upcomingAppsUrl = `${baseUrl}/apps?tab=upcoming`; // (List future release apps)
 
 export {
   allAppsUrl,
