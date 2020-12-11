@@ -3,13 +3,12 @@ import { makeStyles } from '@material-ui/styles';
 export const useStyles = makeStyles(
   ({
     variables: {
-      appHeight, appWidth, headerHeight, mainHeight, footerHeight,
+      appHeight, headerHeight, mainHeight, footerHeight,
     },
   }) => ({
     appLayout: {
       textAlign: 'center',
-      height: appHeight,
-      width: appWidth,
+      minHeight: appHeight,
 
       display: 'grid',
       gridTemplateRows: `${headerHeight} ${mainHeight} ${footerHeight}`,
