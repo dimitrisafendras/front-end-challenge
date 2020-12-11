@@ -4,11 +4,12 @@ import {
   fetchAllApps,
   selectAllApps,
 } from '../../models/allApps';
-import { AppListLayout } from '../../components';
+import { AppListLayout } from '../../genericComponents';
+import { ProductCard } from './components/productCard';
 
 export const AppsList = () => {
   const dispatch = useDispatch();
-  const allApps = useSelector(selectAllApps);
+  const { allApps } = useSelector(selectAllApps);
 
   const allAppsStatus = useSelector((state) => state.apps.status);
   // const error = useSelector((state) => state.allApps.error);
@@ -19,14 +20,11 @@ export const AppsList = () => {
     }
   }, [allAppsStatus, dispatch]);
 
-  console.log('allApps', allApps);
+  // console.log('allApps', allApps);
 
   return (
     <AppListLayout>
-      ujhgkjhg
-      ujhgkjhg
-      ujhgkjhg
-      ujhgkjhg
+      {allApps && allApps.map(({ _id, ...rest }) => <ProductCard key={_id} {...rest} />)}
     </AppListLayout>
   );
 };

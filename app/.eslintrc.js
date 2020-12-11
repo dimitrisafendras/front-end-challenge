@@ -25,5 +25,6 @@ module.exports = {
     'no-use-before-define': 0,
     'no-undef': 0,
     'linebreak-style': 0,
+    'react/jsx-props-no-spreading': 0,
   },
 };

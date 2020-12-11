@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header, AppLayout } from '../components';
+import { Footer, Header, AppLayout } from '../genericComponents';
 
 import { AppsList } from '../views';
 
