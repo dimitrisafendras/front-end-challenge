@@ -1,1 +1,2 @@
-export { AppsList } from './apps-list';
+export { AppsList } from './appsList';
+export { InfoPage } from './infoPage';

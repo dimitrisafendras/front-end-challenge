@@ -24,7 +24,7 @@ export const AppsList = () => {
 
   return (
     <AppListLayout>
-      {allApps && allApps.map(({ _id, ...rest }) => <ProductCard key={_id} {...rest} />)}
+      {allApps && allApps.map(({ _id, ...rest }) => <ProductCard key={_id} id={_id} {...rest} />)}
     </AppListLayout>
   );
 };
