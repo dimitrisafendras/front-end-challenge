@@ -1,30 +1,29 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
 import { useStyles } from './styles';
 
-export const InfoPage = (props) => {
+export const InfoPage = ({ match }) => {
   const dispatch = useDispatch();
   const { selectedApp } = useSelector(selectSelectedApp);
+  const { name } = selectedApp[0] || {};
+  const id = match?.params?.appId || 0;
   const {
     infoPage,
   } = useStyles();
 
-  const id = props.match.params.appId || 0;
-
-  const selectedAppStatus = useSelector((state) => state.selectedApp.status);
-
   useEffect(() => {
-    if (selectedAppStatus === 'idle') {
-      dispatch(fetchSelectedApp(id));
-    }
-  }, [selectedAppStatus, dispatch]);
+    dispatch(fetchSelectedApp(id));
+  }, [id]);
 
   return (
-    <div className={infoPage} />
+    <div className={infoPage}>
+      {name}
+    </div>
   );
 };
 
-InfoPage.propTypes = {};
+InfoPage.propTypes = { match: PropTypes.object };
 
-InfoPage.defaultProps = {};
+InfoPage.defaultProps = { match: {} };
