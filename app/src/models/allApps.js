@@ -7,7 +7,8 @@ const initialState = {
   error: null,
 };
 
-export const fetchAllApps = createAsyncThunk('allApps/fetchAllApps', async () => await client.get(allAppsUrl));
+export const fetchAllApps = createAsyncThunk('allApps/fetchAllApps',
+  async () => await client.get(allAppsUrl));
 
 const { reducer } = createSlice({
   name: 'allApps',

@@ -5,6 +5,8 @@ import {
   selectAllApps,
 } from '../../models/allApps';
 import { AppListLayout } from '../../genericComponents';
+import { fetchTopSellerApps } from '../../models/topSellerApps';
+import { fetchTrendingApps } from '../../models/trendingApps';
 import { ProductCard } from './components/productCard';
 
 export const AppsList = () => {
@@ -16,6 +18,8 @@ export const AppsList = () => {
   useEffect(() => {
     if (allAppsStatus === 'idle') {
       dispatch(fetchAllApps());
+      dispatch(fetchTopSellerApps());
+      dispatch(fetchTrendingApps());
     }
   }, [allAppsStatus, dispatch]);
 
