@@ -6,13 +6,10 @@ import { useStyles } from './styles';
 export const ProductCard = ({
   id,
   name,
-  // ...rest
 }) => {
   const {
     productCard,
   } = useStyles();
-
-  // console.log('id', id);
 
   return (
     <div className={productCard}>

@@ -28,5 +28,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'no-underscore-dangle': 0,
     'no-return-await': 0,
+    'react/forbid-prop-types': 0,
   },
 };

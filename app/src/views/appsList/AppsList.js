@@ -12,15 +12,12 @@ export const AppsList = () => {
   const { allApps } = useSelector(selectAllApps);
 
   const allAppsStatus = useSelector((state) => state.apps.status);
-  // const error = useSelector((state) => state.allApps.error);
 
   useEffect(() => {
     if (allAppsStatus === 'idle') {
       dispatch(fetchAllApps());
     }
   }, [allAppsStatus, dispatch]);
-
-  // console.log('allApps', allApps);
 
   return (
     <AppListLayout>
