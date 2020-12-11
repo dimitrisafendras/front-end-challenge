@@ -27,5 +27,6 @@ module.exports = {
     'linebreak-style': 0,
     'react/jsx-props-no-spreading': 0,
     'no-underscore-dangle': 0,
+    'no-return-await': 0,
   },
 };

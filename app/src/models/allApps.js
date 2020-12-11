@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { client, allAppsUrl } from '../api';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { allAppsUrl, client } from '../api';
 
 const initialState = {
   allApps: [],
@@ -7,11 +7,7 @@ const initialState = {
   error: null,
 };
 
-export const fetchAllApps = createAsyncThunk('allApps', async () => {
-  const response = await client.get(allAppsUrl);
-  console.log('allApps', response);
-  return response;
-});
+export const fetchAllApps = createAsyncThunk('allApps/fetchAllApps', async () => await client.get(allAppsUrl));
 
 const { reducer } = createSlice({
   name: 'allApps',
@@ -23,8 +19,6 @@ const { reducer } = createSlice({
       state.status = 'loading';
     },
     [fetchAllApps.fulfilled]: (state, action) => {
-      console.log('action', action);
-
       state.status = 'succeeded';
       state.allApps = state.allApps.concat(action.payload);
     },
@@ -34,7 +28,6 @@ const { reducer } = createSlice({
     },
   },
 });
-console.log('reducer', reducer);
 
 export { reducer as allAppsReducer };
 

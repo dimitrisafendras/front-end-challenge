@@ -16,7 +16,7 @@ export const InfoPage = (props) => {
 
   useEffect(() => {
     if (selectedAppStatus === 'idle') {
-      dispatch(fetchSelectedApp(id)());
+      dispatch(fetchSelectedApp(id));
     }
   }, [selectedAppStatus, dispatch]);
 

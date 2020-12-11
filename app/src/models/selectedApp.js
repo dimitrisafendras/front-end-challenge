@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { client, selectedAppUrl } from '../api';
 
 const initialState = {
@@ -7,11 +7,8 @@ const initialState = {
   error: null,
 };
 
-export const fetchSelectedApp = (id) => createAsyncThunk('selectedApp', async () => {
-  const response = await client.get(selectedAppUrl(id));
-  console.log('selectedApp', response);
-  return response;
-});
+export const fetchSelectedApp = createAsyncThunk('selectedApp/fetchSelectedApp',
+  async (id) => await client.get(selectedAppUrl(id)));
 
 const { reducer } = createSlice({
   name: 'selectedApp',
@@ -32,7 +29,6 @@ const { reducer } = createSlice({
     },
   },
 });
-console.log('reducer', reducer);
 
 export { reducer as selectedAppReducer };
 
