@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 import React from 'react';
+import { Discount, Prices } from '../../../../genericComponents';
 import { appleLogo, linuxLogo, windowsLogo } from '../../../../static';
 import { useStyles } from './styles';
 
@@ -20,6 +22,9 @@ export const InfoPrice = ({
     name: nameStyle,
     logo,
     platforms,
+    priceContainer,
+    discountStyle,
+    btn,
   } = useStyles();
 
   return (
@@ -29,6 +34,14 @@ export const InfoPrice = ({
         {windows && <img src={windowsLogo} alt="" className={logo} />}
         {mac && <img src={appleLogo} alt="" className={logo} />}
         {linux && <img src={linuxLogo} alt="" className={logo} />}
+      </div>
+      <div className={priceContainer}>
+        <Discount discount_percent={40} classes={discountStyle} />
+        <Prices
+          finalFormatted="200"
+          initialFormatted="100"
+        />
+        <Button className={btn}>Add to Cart</Button>
       </div>
     </div>
   );

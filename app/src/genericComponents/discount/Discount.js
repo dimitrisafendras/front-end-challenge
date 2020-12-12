@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './styles';
 
-export const Discount = ({ discount_percent }) => {
+export const Discount = ({ discount_percent, classes }) => {
   const {
     discount,
   } = useStyles();
 
   return (
-    <div className={discount}>{`-${discount_percent}%`}</div>);
+    <div className={`${classes} ${discount}`}>{`-${discount_percent}%`}</div>);
 };
 
 Discount.propTypes = { discount_percent: PropTypes.number };
