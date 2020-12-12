@@ -29,5 +29,6 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-return-await': 0,
     'react/forbid-prop-types': 0,
+    camelcase: 0,
   },
 };
