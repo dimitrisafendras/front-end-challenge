@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -42,7 +41,6 @@ export const ProductCard = ({
   return (
     <Link to={`/app/${id}`} className={link}>
       <div className={productCard}>
-        {/* <Typography variant="body2">{name}</Typography> */}
         <img src={header_image} alt="" className={img} />
         <div className={info}>
           <div className={nameClass}>

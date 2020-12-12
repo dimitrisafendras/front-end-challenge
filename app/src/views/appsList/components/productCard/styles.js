@@ -2,7 +2,13 @@ import { fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 export const useStyles = makeStyles(
-  ({ palette: { black } }) => ({
+  ({
+    palette: {
+      black,
+      background: { discount, hoverItem },
+      text: { discount: discountText, discountOriginal, secondary },
+    },
+  }) => ({
     link: {
       color: 'unset',
       textDecoration: 'unset',
@@ -23,6 +29,9 @@ export const useStyles = makeStyles(
       alignItems: 'flex-start',
       justifyContent: 'space-around',
     },
+    name: {
+      color: secondary,
+    },
     platforms: {},
     logo: {
       height: 20,
@@ -31,15 +40,26 @@ export const useStyles = makeStyles(
     },
     price: {
       marginLeft: 'auto',
-      backgroundColor: black,
       display: 'flex',
       alignItems: 'center',
     },
     discount: {
+      padding: '0 4px',
+      color: discountText,
+      backgroundColor: discount,
       margin: '0 60px 0 4px',
+    },
+    extraPrices: {
+      textAlign: 'right',
     },
     initialPrice: {
       textDecoration: 'line-through',
+      color: discountOriginal,
+      fontSize: '12px',
+
+    },
+    finalPrice: {
+      color: secondary,
     },
     '@media (max-width: 768px)': {
       price: {
