@@ -13,5 +13,5 @@ export const palette = {
     discountOriginal: '#7193a6',
   },
   black: '#000000',
-
+  white: '#fff',
 };

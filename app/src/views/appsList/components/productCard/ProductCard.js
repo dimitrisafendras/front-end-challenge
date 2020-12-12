@@ -36,8 +36,6 @@ export const ProductCard = ({
 
   const hasDiscount = discount_percent > 0;
 
-  console.log('price_overview', final_formatted, initial_formatted, discount_percent);
-
   return (
     <Link to={`/app/${id}`} className={link}>
       <div className={productCard}>

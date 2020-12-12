@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
+import { InfoPageLayout } from '../../genericComponents';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
 import { useStyles } from './styles';
 
@@ -10,7 +14,12 @@ export const InfoPage = ({ match }) => {
   const { name } = selectedApp[0] || {};
   const id = match?.params?.appId || 0;
   const {
-    infoPage,
+    backBtn,
+    title,
+    carousel,
+    info,
+    about,
+    link,
   } = useStyles();
 
   useEffect(() => {
@@ -18,9 +27,24 @@ export const InfoPage = ({ match }) => {
   }, [id]);
 
   return (
-    <div className={infoPage}>
-      {name}
-    </div>
+    <InfoPageLayout
+      className={info}
+    >
+      <Link to="/" className={link}>
+        <Button
+          className={backBtn}
+          variant="outlined"
+          color="primary"
+          startIcon={<ArrowBackIcon />}
+        >
+          Back to the games list
+        </Button>
+      </Link>
+      <div className={title} />
+      <div className={carousel} />
+      <div className={info} />
+      <div className={about} />
+    </InfoPageLayout>
   );
 };
 
