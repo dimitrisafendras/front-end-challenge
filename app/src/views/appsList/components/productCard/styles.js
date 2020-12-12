@@ -5,7 +5,7 @@ export const useStyles = makeStyles(
   ({
     palette: {
       black,
-      background: { discount, hoverItem },
+      background: { discount },
       text: { discount: discountText, discountOriginal, secondary },
     },
   }) => ({
@@ -14,6 +14,7 @@ export const useStyles = makeStyles(
       textDecoration: 'unset',
     },
     productCard: {
+      paddingRight: '12px',
       margin: '10px',
       display: 'flex',
       backgroundColor: fade(black, 0.2),
