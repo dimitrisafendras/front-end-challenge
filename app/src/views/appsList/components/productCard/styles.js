@@ -5,8 +5,7 @@ export const useStyles = makeStyles(
   ({
     palette: {
       black,
-      background: { discount },
-      text: { discount: discountText, discountOriginal, secondary },
+      text: { discountOriginal, secondary },
     },
   }) => ({
     link: {
@@ -44,12 +43,6 @@ export const useStyles = makeStyles(
       marginLeft: 'auto',
       display: 'flex',
       alignItems: 'center',
-    },
-    discount: {
-      padding: '0 4px',
-      margin: '0 60px 0 4px',
-      color: discountText,
-      backgroundColor: discount,
     },
     extraPrices: {
       textAlign: 'right',
