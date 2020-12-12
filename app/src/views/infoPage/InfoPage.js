@@ -77,6 +77,7 @@ export const InfoPage = ({ match }) => {
         publishers={publishers}
       />
       <InfoPrice
+        name={name}
         className={price}
         discount={discount_percent}
         initialPrice={initial_formatted}

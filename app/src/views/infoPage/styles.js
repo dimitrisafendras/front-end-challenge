@@ -36,7 +36,6 @@ export const useStyles = makeStyles(
     },
     price: {
       gridArea: 'price',
-      backgroundColor: 'yellow',
     },
     relevance: {
       gridArea: 'relevance',
