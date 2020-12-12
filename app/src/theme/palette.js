@@ -14,4 +14,5 @@ export const palette = {
   },
   black: '#000000',
   white: '#fff',
+  lightBlue: '#67c1f5',
 };

@@ -9,7 +9,6 @@ export const useStyles = makeStyles(
       display: 'grid',
       gridGap: '4px',
       gridTemplateColumns: '67% 33%',
-      gridTemplateRows: '36px 32px auto',
       gridTemplateAreas: `
         "backBtn backBtn"
         "title title"

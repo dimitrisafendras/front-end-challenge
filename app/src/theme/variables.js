@@ -3,5 +3,5 @@ export const variables = {
   appWidth: '100vw',
   headerHeight: '104px',
   mainHeight: '1fr',
-  footerHeight: '164px',
+  footerHeight: '100px',
 };

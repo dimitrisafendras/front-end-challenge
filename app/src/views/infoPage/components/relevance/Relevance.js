@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import { useStyles } from './styles';
 
 export const Relevance = ({
@@ -21,10 +22,16 @@ export const Relevance = ({
     <div className={`${className} ${relevance}`}>
       <div className={title}> Is this game relevant to you? </div>
       <div className={container}>
-        <div className={item}>
-          <div className={icon} />
-          <div className={text} />
-        </div>
+        {categories.map(({ id, description }) => (
+          <div className={item} key={id}>
+            <div className={icon}>
+              <SportsEsportsIcon />
+            </div>
+            <div className={text}>
+              {description}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
