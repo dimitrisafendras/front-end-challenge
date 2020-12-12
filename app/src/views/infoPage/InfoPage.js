@@ -13,7 +13,7 @@ export const InfoPage = ({ match }) => {
   const dispatch = useDispatch();
   const { selectedApp } = useSelector(selectSelectedApp);
   const {
-    name, background, short_description, header_image, ...rest
+    name, background, header_image, short_description, release_date, developers, publishers, ...rest
   } = selectedApp[0] || {};
   console.log('rest', rest);
 
@@ -55,7 +55,14 @@ export const InfoPage = ({ match }) => {
       </Link>
       <div className={title}>{name}</div>
       <div className={carousel} />
-      <Info className={info} />
+      <Info
+        className={info}
+        headerImage={header_image}
+        shortDescription={short_description}
+        releaseDate={release_date}
+        developers={developers}
+        publishers={publishers}
+      />
       <div className={price} />
       <div className={relevance} />
       <div className={about} />
