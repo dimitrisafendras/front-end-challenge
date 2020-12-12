@@ -8,8 +8,16 @@ import { useStyles } from './styles';
 export const ProductCard = ({
   id,
   name,
-  platforms,
-  price_overview,
+  platforms: {
+    windows,
+    mac,
+    linux,
+  },
+  price_overview: {
+    final_formatted,
+    initial_formatted,
+    discount_percent,
+  },
   header_image,
 }) => {
   const {
@@ -20,12 +28,19 @@ export const ProductCard = ({
     logo,
     name: nameClass,
     platforms: platformsClass,
+    discount,
+    extraPrices,
+    initialPrice,
+    finalPrice,
+    link,
   } = useStyles();
 
-  console.log('rest', platforms);
+  const hasDiscount = discount_percent > 0;
+
+  console.log('price_overview', final_formatted, initial_formatted, discount_percent);
 
   return (
-    <Link to={`/app/${id}`}>
+    <Link to={`/app/${id}`} className={link}>
       <div className={productCard}>
         {/* <Typography variant="body2">{name}</Typography> */}
         <img src={header_image} alt="" className={img} />
@@ -34,12 +49,18 @@ export const ProductCard = ({
             {name}
           </div>
           <div className={platformsClass}>
-            <img src={windowsLogo} alt="" className={logo} />
-            <img src={appleLogo} alt="" className={logo} />
-            <img src={linuxLogo} alt="" className={logo} />
+            {windows && <img src={windowsLogo} alt="" className={logo} />}
+            {mac && <img src={appleLogo} alt="" className={logo} />}
+            {linux && <img src={linuxLogo} alt="" className={logo} />}
           </div>
         </div>
-        <div className={price} />
+        <div className={price}>
+          {hasDiscount && (<div className={discount}>{`-${discount_percent}%`}</div>)}
+          <div className={extraPrices}>
+            {initial_formatted && <div className={initialPrice}>{initial_formatted}</div>}
+            {final_formatted && (<div className={finalPrice}>{final_formatted}</div>)}
+          </div>
+        </div>
       </div>
     </Link>
   );
