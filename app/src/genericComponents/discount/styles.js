@@ -9,10 +9,14 @@ export const useStyles = makeStyles(
   }) => ({
     discount: {
       padding: '0 4px',
-      margin: '0 60px 0 4px',
+      margin: '4px 60px 4px 4px',
       color: discountText,
       backgroundColor: discount,
     },
+    '@media (max-width: 768px)': {
+      discount: {
+        margin: '4px 0 4px 4px',
+      },
+    },
   }),
-
 );

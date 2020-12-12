@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Discount } from '../../../../genericComponents';
+import { Discount, Prices } from '../../../../genericComponents';
 import { appleLogo, linuxLogo, windowsLogo } from '../../../../static';
 import { useStyles } from './styles';
 
@@ -28,9 +28,6 @@ export const ProductCard = ({
     logo,
     name: nameClass,
     platforms: platformsClass,
-    extraPrices,
-    initialPrice,
-    finalPrice,
     link,
   } = useStyles();
 
@@ -52,10 +49,10 @@ export const ProductCard = ({
         </div>
         <div className={price}>
           {hasDiscount && <Discount discount_percent={discount_percent} />}
-          <div className={extraPrices}>
-            {initial_formatted && <div className={initialPrice}>{initial_formatted}</div>}
-            {final_formatted && (<div className={finalPrice}>{final_formatted}</div>)}
-          </div>
+          <Prices
+            initialFormatted={initial_formatted}
+            finalFormatted={final_formatted}
+          />
         </div>
       </div>
     </Link>
