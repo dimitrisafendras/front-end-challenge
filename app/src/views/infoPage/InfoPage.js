@@ -40,7 +40,7 @@ export const InfoPage = ({ match }) => {
           Back to the games list
         </Button>
       </Link>
-      <div className={title} />
+      <div className={title}>{name}</div>
       <div className={carousel} />
       <div className={info} />
       <div className={about} />

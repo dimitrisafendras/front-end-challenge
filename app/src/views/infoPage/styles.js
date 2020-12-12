@@ -1,21 +1,31 @@
 import { makeStyles } from '@material-ui/styles';
 
 export const useStyles = makeStyles(
-  () => ({
+  ({
+    palette: {
+      text: {
+        secondary,
+      },
+    },
+  }) => ({
     infoPage: {
     },
     link: {
       color: 'unset',
       textDecoration: 'unset',
-      width: '100%',
+      justifySelf: 'stretch',
       gridArea: 'backBtn',
     },
     backBtn: {
+      color: secondary,
       width: '100%',
     },
     title: {
       gridArea: 'title',
-      backgroundColor: 'green',
+      alignSelf: 'center',
+      textAlign: 'left',
+      color: secondary,
+      fontSize: '24px',
     },
     carousel: {
       gridArea: 'carousel',
