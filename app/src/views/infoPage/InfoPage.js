@@ -6,14 +6,22 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { InfoPageLayout } from '../../genericComponents';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
-import { Info } from './components';
+import { Info, Relevance } from './components';
 import { useStyles } from './styles';
 
 export const InfoPage = ({ match }) => {
   const dispatch = useDispatch();
   const { selectedApp } = useSelector(selectSelectedApp);
   const {
-    name, background, header_image, short_description, release_date, developers, publishers, ...rest
+    name,
+    background,
+    header_image,
+    short_description,
+    release_date,
+    developers,
+    publishers,
+    categories,
+    ...rest
   } = selectedApp[0] || {};
   console.log('rest', rest);
 
@@ -64,7 +72,7 @@ export const InfoPage = ({ match }) => {
         publishers={publishers}
       />
       <div className={price} />
-      <div className={relevance} />
+      <Relevance className={relevance} categories={categories} />
       <div className={about} />
     </InfoPageLayout>
   );

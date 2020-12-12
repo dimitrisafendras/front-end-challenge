@@ -40,7 +40,6 @@ export const useStyles = makeStyles(
     },
     relevance: {
       gridArea: 'relevance',
-      backgroundColor: 'red',
     },
     about: {
       gridArea: 'about',
