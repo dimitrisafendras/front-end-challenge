@@ -6,6 +6,7 @@ export const palette = {
   text: {
     primary: '#66c0f4',
     secondary: '#c7d5e0',
+    tetriary: '#b8b6b4',
   },
   black: '#000000',
 };

@@ -5,6 +5,9 @@ export const useStyles = makeStyles(
     header: {
       gridArea: 'header',
       backgroundColor: darkBackground,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   }),
 );
