@@ -33,7 +33,6 @@ export const InfoPage = ({ match }) => {
     info,
     price,
     relevance,
-    about,
     link,
   } = useStyles();
 
@@ -73,7 +72,6 @@ export const InfoPage = ({ match }) => {
       />
       <div className={price} />
       <Relevance className={relevance} categories={categories} />
-      <div className={about} />
     </InfoPageLayout>
   );
 };
