@@ -7,4 +7,5 @@ export const palette = {
     primary: '#66c0f4',
     secondary: '#c7d5e0',
   },
+  black: '#000000',
 };

@@ -1,6 +1,8 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { appleLogo, linuxLogo, windowsLogo } from '../../../../static';
 import { useStyles } from './styles';
 
 export const ProductCard = ({
@@ -12,13 +14,33 @@ export const ProductCard = ({
 }) => {
   const {
     productCard,
+    img,
+    info,
+    price,
+    logo,
+    name: nameClass,
+    platforms: platformsClass,
   } = useStyles();
 
-  console.log('rest', platforms, header_image, price_overview);
+  console.log('rest', platforms);
 
   return (
-    <Link to={`/app/${id}`} className={productCard}>
-      {name}
+    <Link to={`/app/${id}`}>
+      <div className={productCard}>
+        {/* <Typography variant="body2">{name}</Typography> */}
+        <img src={header_image} alt="" className={img} />
+        <div className={info}>
+          <div className={nameClass}>
+            {name}
+          </div>
+          <div className={platformsClass}>
+            <img src={windowsLogo} alt="" className={logo} />
+            <img src={appleLogo} alt="" className={logo} />
+            <img src={linuxLogo} alt="" className={logo} />
+          </div>
+        </div>
+        <div className={price} />
+      </div>
     </Link>
   );
 };

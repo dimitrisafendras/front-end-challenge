@@ -24,7 +24,7 @@ export const typography = (typo) => {
       fontWeight: 300,
     },
     body2: {
-      fontSize: pxToRem(16),
+      fontSize: pxToRem(14),
       lineHeight: 1.1,
       fontWeight: 300,
     },
