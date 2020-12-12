@@ -25,13 +25,14 @@ export const useStyles = makeStyles(
     },
     info: {
       display: 'flex',
-      margin: '0 4px',
+      margin: '0 12px',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'space-around',
     },
     name: {
       color: secondary,
+      textAlign: 'left',
     },
     platforms: {},
     logo: {
@@ -46,9 +47,9 @@ export const useStyles = makeStyles(
     },
     discount: {
       padding: '0 4px',
+      margin: '0 60px 0 4px',
       color: discountText,
       backgroundColor: discount,
-      margin: '0 60px 0 4px',
     },
     extraPrices: {
       textAlign: 'right',
