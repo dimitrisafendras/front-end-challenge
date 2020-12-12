@@ -35,6 +35,14 @@ export const useStyles = makeStyles(
       gridArea: 'info',
       backgroundColor: 'pink',
     },
+    price: {
+      gridArea: 'price',
+      backgroundColor: 'yellow',
+    },
+    relevance: {
+      gridArea: 'relevance',
+      backgroundColor: 'red',
+    },
     about: {
       gridArea: 'about',
       backgroundColor: 'orange',

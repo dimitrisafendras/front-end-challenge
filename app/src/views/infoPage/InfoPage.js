@@ -18,6 +18,8 @@ export const InfoPage = ({ match }) => {
     title,
     carousel,
     info,
+    price,
+    relevance,
     about,
     link,
   } = useStyles();
@@ -43,6 +45,8 @@ export const InfoPage = ({ match }) => {
       <div className={title}>{name}</div>
       <div className={carousel} />
       <div className={info} />
+      <div className={price} />
+      <div className={relevance} />
       <div className={about} />
     </InfoPageLayout>
   );

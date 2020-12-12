@@ -11,6 +11,7 @@ export const useStyles = makeStyles(
         "backBtn backBtn"
         "title title"
         "carousel info"
+        "price relevance"
         "about ."
       `,
     },
