@@ -6,12 +6,17 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { InfoPageLayout } from '../../genericComponents';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
+import { Info } from './components';
 import { useStyles } from './styles';
 
 export const InfoPage = ({ match }) => {
   const dispatch = useDispatch();
   const { selectedApp } = useSelector(selectSelectedApp);
-  const { name } = selectedApp[0] || {};
+  const {
+    name, background, short_description, header_image, ...rest
+  } = selectedApp[0] || {};
+  console.log('rest', rest);
+
   const id = match?.params?.appId || 0;
   const {
     backBtn,
@@ -31,6 +36,12 @@ export const InfoPage = ({ match }) => {
   return (
     <InfoPageLayout
       className={info}
+      styles={{
+        backgroundImage: `url(${background})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
     >
       <Link to="/" className={link}>
         <Button
@@ -44,7 +55,7 @@ export const InfoPage = ({ match }) => {
       </Link>
       <div className={title}>{name}</div>
       <div className={carousel} />
-      <div className={info} />
+      <Info className={info} />
       <div className={price} />
       <div className={relevance} />
       <div className={about} />
