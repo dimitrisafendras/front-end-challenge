@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { InfoPageLayout } from '../../genericComponents';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
-import { Info, Relevance } from './components';
+import { Info, InfoPrice, Relevance } from './components';
 import { useStyles } from './styles';
 
 export const InfoPage = ({ match }) => {
@@ -21,10 +21,16 @@ export const InfoPage = ({ match }) => {
     developers,
     publishers,
     categories,
+    price_overview,
+    platforms,
     ...rest
   } = selectedApp[0] || {};
   console.log('rest', rest);
-
+  const {
+    final_formatted,
+    initial_formatted,
+    discount_percent,
+  } = price_overview || {};
   const id = match?.params?.appId || 0;
   const {
     backBtn,
@@ -70,7 +76,13 @@ export const InfoPage = ({ match }) => {
         developers={developers}
         publishers={publishers}
       />
-      <div className={price} />
+      <InfoPrice
+        className={price}
+        discount={discount_percent}
+        initialPrice={initial_formatted}
+        finalPrice={final_formatted}
+        platforms={platforms}
+      />
       <Relevance className={relevance} categories={categories} />
     </InfoPageLayout>
   );

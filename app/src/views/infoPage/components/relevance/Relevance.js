@@ -16,8 +16,6 @@ export const Relevance = ({
     text,
   } = useStyles();
 
-  console.log('catch', categories);
-
   return (
     <div className={`${className} ${relevance}`}>
       <div className={title}> Is this game relevant to you? </div>

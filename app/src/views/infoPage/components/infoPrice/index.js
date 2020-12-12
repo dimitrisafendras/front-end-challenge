@@ -1,0 +1,1 @@
+export { InfoPrice } from './InfoPrice';
