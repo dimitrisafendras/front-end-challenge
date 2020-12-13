@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { useSelector, useDispatch } from 'react-redux';
+import { TabPanel, ProductCard } from './components';
 import { useStyles } from './styles';
 import {
   fetchAllApps,
@@ -13,40 +12,6 @@ import {
 import { AppListLayout } from '../../genericComponents';
 import { fetchTopSellerApps, selectTopSellerApps } from '../../models/topSellerApps';
 import { fetchTrendingApps, selectTrendingApps } from '../../models/trendingApps';
-import { ProductCard } from './components/productCard';
-
-const TabPanel = (props) => {
-  const {
-    children, value, index, ...other
-  } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          {children}
-        </Box>
-      )}
-    </div>
-  );
-};
-
-TabPanel.propTypes = {
-  children: PropTypes.node.isRequired,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-const a11yProps = (index) => ({
-  id: `simple-tab-${index}`,
-  'aria-controls': `simple-tabpanel-${index}`,
-});
 
 export const AppsList = () => {
   const {
@@ -72,6 +37,11 @@ export const AppsList = () => {
       dispatch(fetchTrendingApps());
     }
   }, [allAppsStatus, dispatch]);
+
+  const a11yProps = (index) => ({
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  });
 
   const showApps = (appsList, size) => appsList.slice(0, size).map(({
     _id,
