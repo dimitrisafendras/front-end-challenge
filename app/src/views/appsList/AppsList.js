@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { TextField } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { TabPanel, ProductCard } from './components';
 import { useStyles } from './styles';
@@ -19,7 +20,9 @@ export const AppsList = () => {
     appList,
   } = useStyles();
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const [filterText, setFilterText] = useState('');
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -43,25 +46,34 @@ export const AppsList = () => {
     'aria-controls': `simple-tabpanel-${index}`,
   });
 
-  const showApps = (appsList, size) => appsList.slice(0, size).map(({
-    _id,
-    name,
-    platforms,
-    price_overview,
-    header_image,
-  }) => (
-    <ProductCard
-      key={_id}
-      id={_id}
-      name={name}
-      platforms={platforms}
-      price_overview={price_overview}
-      header_image={header_image}
-    />
-  ));
+  const showApps = (appsList, size) => appsList
+    .slice(0, size)
+    .filter(({ name }) => name.toUpperCase().includes(filterText.toUpperCase()))
+    .map(({
+      _id,
+      name,
+      platforms,
+      price_overview,
+      header_image,
+    }) => (
+      <ProductCard
+        key={_id}
+        id={_id}
+        name={name}
+        platforms={platforms}
+        price_overview={price_overview}
+        header_image={header_image}
+      />
+    ));
 
   return (
     <AppListLayout>
+      <TextField
+        label="Search"
+        onChange={(
+          event,
+        ) => setFilterText(event.target.value)}
+      />
       <AppBar position="static" className={appBar}>
         <Tabs
           value={value}
