@@ -47,11 +47,16 @@ export const useStyles = makeStyles(
         width: '100%',
       },
     },
-
     aboutTitle: {
       fontSize: '24px',
       marginBottom: '12px',
       textTransform: 'uppercase',
+    },
+
+    '@media (max-width: 968px)': {
+      carousel: {
+        display: 'none',
+      },
     },
   }),
 );

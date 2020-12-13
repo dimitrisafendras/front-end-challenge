@@ -21,11 +21,9 @@ export const Carousel = ({ classes, screenshots }) => {
   };
 
   return (
-    <div className={`${classes} ${carousel}`}>
-      {/* <Slider {...settings}> */}
-      {/*  {screenshots.map(({ id, path_full }) => <img key={id} src={path_full} alt="" className={image} />)} */}
-      {/* </Slider> */}
-    </div>
+    <Slider {...settings} className={`${classes} ${carousel}`}>
+      {screenshots.map(({ id, path_full }) => <img key={id} src={path_full} alt="" className={image} />)}
+    </Slider>
   );
 };
 
