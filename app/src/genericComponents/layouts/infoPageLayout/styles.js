@@ -17,5 +17,21 @@ export const useStyles = makeStyles(
         "about ."
       `,
     },
+    '@media (max-width: 768px)': {
+      infoPageLayout: {
+        maxWidth: '768px',
+        rowGap: '12px',
+        gridTemplateColumns: '1fr',
+        gridTemplateAreas: `
+        "backBtn"
+        "title"
+        "carousel"
+        "info"
+        "price"
+        "relevance"
+        "about"
+      `,
+      },
+    },
   }),
 );

@@ -20,7 +20,6 @@ export const useStyles = makeStyles(
     },
     img: {
       width: '100%',
-      maxWidth: '300px',
       marginBottom: '8px',
     },
     shortDesc: {

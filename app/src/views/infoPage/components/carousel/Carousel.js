@@ -6,6 +6,7 @@ import { useStyles } from './styles';
 export const Carousel = ({ classes, screenshots }) => {
   const {
     carousel,
+    image,
   } = useStyles();
   const settings = {
     dots: false,
@@ -21,9 +22,9 @@ export const Carousel = ({ classes, screenshots }) => {
 
   return (
     <div className={`${classes} ${carousel}`}>
-      <Slider {...settings}>
-        {screenshots.map(({ id, path_full }) => <img key={id} src={path_full} alt="" />)}
-      </Slider>
+      {/* <Slider {...settings}> */}
+      {/*  {screenshots.map(({ id, path_full }) => <img key={id} src={path_full} alt="" className={image} />)} */}
+      {/* </Slider> */}
     </div>
   );
 };
