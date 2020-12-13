@@ -8,9 +8,9 @@ import { useStyles } from './styles';
 export const InfoPrice = ({
   name,
   className,
-  discount = 40,
-  initialPrice = '120',
-  finalPrice = '200',
+  discount,
+  initialPrice,
+  finalPrice,
   platforms: {
     windows,
     mac,
@@ -36,10 +36,10 @@ export const InfoPrice = ({
         {linux && <img src={linuxLogo} alt="" className={logo} />}
       </div>
       <div className={priceContainer}>
-        <Discount discount_percent={40} classes={discountStyle} />
+        <Discount discount_percent={discount || 100} classes={discountStyle} />
         <Prices
-          finalFormatted="200"
-          initialFormatted="100"
+          finalFormatted={finalPrice || '20$'}
+          initialFormatted={initialPrice || '200$'}
         />
         <Button className={btn}>Add to Cart</Button>
       </div>
