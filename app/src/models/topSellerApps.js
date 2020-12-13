@@ -32,4 +32,4 @@ const { reducer } = createSlice({
 
 export { reducer as topSellerAppsReducer };
 
-export const selectTopSellerApps = (state) => state.apps;
+export const selectTopSellerApps = (state) => state.topSellerApps;

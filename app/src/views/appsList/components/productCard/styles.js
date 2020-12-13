@@ -19,7 +19,7 @@ export const useStyles = makeStyles(
       backgroundColor: fade(black, 0.2),
     },
     img: {
-      height: 69,
+      width: '100%',
       maxWidth: '184px',
     },
     info: {

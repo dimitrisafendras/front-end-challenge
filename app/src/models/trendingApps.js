@@ -32,4 +32,4 @@ const { reducer } = createSlice({
 
 export { reducer as trendingAppsReducer };
 
-export const selectTrendingApps = (state) => state.apps;
+export const selectTrendingApps = (state) => state.trendingApps;
