@@ -14,6 +14,7 @@ export const useStyles = makeStyles(
         "title title"
         "carousel info"
         "price relevance"
+        "about ."
       `,
     },
   }),

@@ -23,6 +23,7 @@ export const InfoPage = ({ match }) => {
     categories,
     price_overview,
     platforms,
+    about_the_game,
     ...rest
   } = selectedApp[0] || {};
   console.log('rest', rest);
@@ -40,6 +41,8 @@ export const InfoPage = ({ match }) => {
     price,
     relevance,
     link,
+    about,
+    aboutTitle,
   } = useStyles();
 
   useEffect(() => {
@@ -85,6 +88,10 @@ export const InfoPage = ({ match }) => {
         platforms={platforms}
       />
       <Relevance className={relevance} categories={categories} />
+      <div className={about}>
+        <div className={aboutTitle}>About this game</div>
+        <div dangerouslySetInnerHTML={{ __html: about_the_game }} />
+      </div>
     </InfoPageLayout>
   );
 };

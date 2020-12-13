@@ -6,6 +6,7 @@ export const useStyles = makeStyles(
       text: {
         secondary,
       },
+      lightBlue,
     },
   }) => ({
     infoPage: {
@@ -41,8 +42,14 @@ export const useStyles = makeStyles(
       gridArea: 'relevance',
     },
     about: {
+      color: secondary,
       gridArea: 'about',
-      backgroundColor: 'orange',
+      textAlign: 'left',
+    },
+    aboutTitle: {
+      fontSize: '24px',
+      marginBottom: '12px',
+      textTransform: 'uppercase',
     },
   }),
 );
