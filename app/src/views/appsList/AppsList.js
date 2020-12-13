@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { useSelector, useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+import { useStyles } from './styles';
 import {
   fetchAllApps,
   selectAllApps,
@@ -49,6 +49,11 @@ const a11yProps = (index) => ({
 });
 
 export const AppsList = () => {
+  const {
+    appBar,
+    appList,
+  } = useStyles();
+
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -87,20 +92,24 @@ export const AppsList = () => {
 
   return (
     <AppListLayout>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange}>
+      <AppBar position="static" className={appBar}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+        >
           <Tab label="All Items" {...a11yProps(0)} />
           <Tab label="Top Sellers" {...a11yProps(1)} />
           <Tab label="Trending Now" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} className={appList}>
         {allApps && showApps(allApps)}
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} className={appList}>
         {allApps && showApps(topSellerApps)}
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} className={appList}>
         {allApps && showApps(trendingApps)}
       </TabPanel>
     </AppListLayout>
