@@ -73,7 +73,7 @@ export const AppsList = () => {
     }
   }, [allAppsStatus, dispatch]);
 
-  const showApps = (appsList) => appsList.map(({
+  const showApps = (appsList, size) => appsList.slice(0, size).map(({
     _id,
     name,
     platforms,
@@ -107,10 +107,10 @@ export const AppsList = () => {
         {allApps && showApps(allApps)}
       </TabPanel>
       <TabPanel value={value} index={1} className={appList}>
-        {allApps && showApps(topSellerApps)}
+        {allApps && showApps(topSellerApps, 10)}
       </TabPanel>
       <TabPanel value={value} index={2} className={appList}>
-        {allApps && showApps(trendingApps)}
+        {allApps && showApps(trendingApps, 10)}
       </TabPanel>
     </AppListLayout>
   );
