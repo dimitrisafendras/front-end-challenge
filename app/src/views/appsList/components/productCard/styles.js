@@ -50,6 +50,9 @@ export const useStyles = makeStyles(
       justifyContent: 'space-between',
       alignItems: 'center',
     },
+    noDiscountPrice: {
+      justifyContent: 'flex-end',
+    },
     '@media (max-width: 768px)': {
       price: {
         flexDirection: 'column',

@@ -25,6 +25,7 @@ export const ProductCard = ({
     img,
     info,
     price,
+    noDiscountPrice,
     logo,
     name: nameClass,
     platforms: platformsClass,
@@ -47,7 +48,7 @@ export const ProductCard = ({
             {linux && <img src={linuxLogo} alt="" className={logo} />}
           </div>
         </div>
-        <div className={price}>
+        <div className={`${price} ${!hasDiscount ? noDiscountPrice : ''}`}>
           {hasDiscount && <Discount discount_percent={discount_percent} />}
           <Prices
             initialFormatted={initial_formatted}

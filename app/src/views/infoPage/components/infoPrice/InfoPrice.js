@@ -36,10 +36,10 @@ export const InfoPrice = ({
         {linux && <img src={linuxLogo} alt="" className={logo} />}
       </div>
       <div className={priceContainer}>
-        <Discount discount_percent={discount || 100} classes={discountStyle} />
+        {discount && <Discount discount_percent={discount} classes={discountStyle} />}
         <Prices
-          finalFormatted={finalPrice || '20$'}
-          initialFormatted={initialPrice || '200$'}
+          finalFormatted={finalPrice}
+          initialFormatted={initialPrice}
         />
         <Button className={btn}>Add to Cart</Button>
       </div>
