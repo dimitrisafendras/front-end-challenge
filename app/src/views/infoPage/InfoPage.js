@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash-es';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
@@ -28,9 +29,9 @@ export const InfoPage = ({ match }) => {
     platforms,
     about_the_game,
     screenshots,
-    ...rest
+    // ...rest
   } = selectedApp[0] || {};
-  console.log('rest', rest);
+
   const {
     final_formatted,
     initial_formatted,
@@ -63,39 +64,43 @@ export const InfoPage = ({ match }) => {
         backgroundSize: 'cover',
       }}
     >
-      <Link to="/" className={link}>
-        <Button
-          className={backBtn}
-          variant="outlined"
-          color="primary"
-          startIcon={<ArrowBackIcon />}
-        >
-          Back to the games list
-        </Button>
-      </Link>
-      <div className={title}>{name}</div>
-      <Carousel screenshots={screenshots} classes={carousel} />
-      <Info
-        className={info}
-        headerImage={header_image}
-        shortDescription={short_description}
-        releaseDate={release_date}
-        developers={developers}
-        publishers={publishers}
-      />
-      <InfoPrice
-        name={name}
-        className={price}
-        discount={discount_percent}
-        initialPrice={initial_formatted}
-        finalPrice={final_formatted}
-        platforms={platforms}
-      />
-      <Relevance className={relevance} categories={categories} />
-      <div className={about}>
-        <div className={aboutTitle}>About this game</div>
-        <div dangerouslySetInnerHTML={{ __html: about_the_game }} />
-      </div>
+      {!isEmpty(selectedApp) && (
+      <>
+        <Link to="/" className={link}>
+          <Button
+            className={backBtn}
+            variant="outlined"
+            color="primary"
+            startIcon={<ArrowBackIcon />}
+          >
+            Back to the games list
+          </Button>
+        </Link>
+        <div className={title}>{name}</div>
+        <Carousel screenshots={screenshots} classes={carousel} />
+        <Info
+          className={info}
+          headerImage={header_image}
+          shortDescription={short_description}
+          releaseDate={release_date}
+          developers={developers}
+          publishers={publishers}
+        />
+        <InfoPrice
+          name={name}
+          className={price}
+          discount={discount_percent}
+          initialPrice={initial_formatted}
+          finalPrice={final_formatted}
+          platforms={platforms}
+        />
+        <Relevance className={relevance} categories={categories} />
+        <div className={about}>
+          <div className={aboutTitle}>About this game</div>
+          <div dangerouslySetInnerHTML={{ __html: about_the_game }} />
+        </div>
+      </>
+      )}
     </InfoPageLayout>
   );
 };
