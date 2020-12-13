@@ -30,7 +30,6 @@ export const useStyles = makeStyles(
     },
     carousel: {
       gridArea: 'carousel',
-      backgroundColor: 'blue',
     },
     info: {
       gridArea: 'info',

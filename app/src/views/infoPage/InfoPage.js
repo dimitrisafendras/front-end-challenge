@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { InfoPageLayout } from '../../genericComponents';
 import { fetchSelectedApp, selectSelectedApp } from '../../models/selectedApp';
-import { Info, InfoPrice, Relevance } from './components';
+import {
+  Carousel, Info, InfoPrice, Relevance,
+} from './components';
 import { useStyles } from './styles';
 
 export const InfoPage = ({ match }) => {
@@ -24,6 +27,7 @@ export const InfoPage = ({ match }) => {
     price_overview,
     platforms,
     about_the_game,
+    screenshots,
     ...rest
   } = selectedApp[0] || {};
   console.log('rest', rest);
@@ -70,7 +74,7 @@ export const InfoPage = ({ match }) => {
         </Button>
       </Link>
       <div className={title}>{name}</div>
-      <div className={carousel} />
+      <Carousel screenshots={screenshots} classes={carousel} />
       <Info
         className={info}
         headerImage={header_image}
