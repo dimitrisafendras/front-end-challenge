@@ -9,7 +9,7 @@ export const useStyles = makeStyles(
   }) => ({
     discount: {
       padding: '2px 4px',
-      margin: '4px 60px 4px 4px',
+      margin: '4px 4px 4px 4px',
       color: discountText,
       backgroundColor: discount,
     },

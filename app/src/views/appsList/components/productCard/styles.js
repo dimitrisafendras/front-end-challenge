@@ -5,6 +5,7 @@ export const useStyles = makeStyles(
   ({
     palette: {
       black,
+      lightBlue,
       text: { secondary },
     },
   }) => ({
@@ -17,6 +18,9 @@ export const useStyles = makeStyles(
       margin: '10px',
       display: 'flex',
       backgroundColor: fade(black, 0.2),
+      '&:hover': {
+        backgroundColor: fade(lightBlue, 0.6),
+      },
     },
     img: {
       width: '100%',
@@ -40,8 +44,10 @@ export const useStyles = makeStyles(
       margin: 2,
     },
     price: {
+      width: '150px',
       marginLeft: 'auto',
       display: 'flex',
+      justifyContent: 'space-between',
       alignItems: 'center',
     },
     '@media (max-width: 768px)': {

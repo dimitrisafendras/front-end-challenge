@@ -17,5 +17,10 @@ export const useStyles = makeStyles(
     finalPrice: {
       color: secondary,
     },
+    freeToPlay: {
+      color: secondary,
+      marginLeft: 'auto',
+      fontSize: '12px',
+    },
   }),
 );

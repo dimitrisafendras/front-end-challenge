@@ -7,13 +7,21 @@ export const Prices = ({ initialFormatted, finalFormatted }) => {
     prices,
     initialPrice,
     finalPrice,
+    freeToPlay,
   } = useStyles();
 
+  const hasPrice = !!initialFormatted || !!finalFormatted;
+
   return (
-    <div className={prices}>
-      {initialFormatted && <div className={initialPrice}>{initialFormatted}</div>}
-      {finalFormatted && <div className={finalPrice}>{finalFormatted}</div>}
-    </div>
+    <>
+      {hasPrice ? (
+        <div className={prices}>
+          {initialFormatted && <div className={initialPrice}>{initialFormatted}</div>}
+          {finalFormatted && <div className={finalPrice}>{finalFormatted}</div>}
+        </div>
+      )
+        : <div className={freeToPlay}>FREE TO PLAY</div>}
+    </>
   );
 };
 
