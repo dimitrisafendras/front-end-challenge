@@ -19,6 +19,7 @@ export const ProductCard = ({
     discount_percent,
   },
   header_image,
+  categories,
 }) => {
   const {
     productCard,
@@ -30,6 +31,8 @@ export const ProductCard = ({
     name: nameClass,
     platforms: platformsClass,
     link,
+    categoriesContainer,
+    category,
   } = useStyles();
 
   const hasDiscount = discount_percent > 0;
@@ -46,6 +49,14 @@ export const ProductCard = ({
             {windows && <img src={windowsLogo} alt="" className={logo} />}
             {mac && <img src={appleLogo} alt="" className={logo} />}
             {linux && <img src={linuxLogo} alt="" className={logo} />}
+          </div>
+          <div className={categoriesContainer}>
+            {categories.slice(0, 3).map(({ cId, description }) => (
+              <div key={cId} className={category}>
+                {`${description},`}
+                &nbsp;
+              </div>
+            ))}
           </div>
         </div>
         <div className={`${price} ${!hasDiscount ? noDiscountPrice : ''}`}>
@@ -66,6 +77,7 @@ ProductCard.propTypes = {
   platforms: PropTypes.object,
   price_overview: PropTypes.object,
   header_image: PropTypes.string,
+  categories: PropTypes.array,
 };
 
 ProductCard.defaultProps = {
@@ -74,4 +86,5 @@ ProductCard.defaultProps = {
   platforms: {},
   price_overview: {},
   header_image: '',
+  categories: [],
 };

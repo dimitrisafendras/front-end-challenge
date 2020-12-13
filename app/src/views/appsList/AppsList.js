@@ -55,6 +55,7 @@ export const AppsList = () => {
       platforms,
       price_overview,
       header_image,
+      categories,
     }) => (
       <ProductCard
         key={_id}
@@ -63,6 +64,7 @@ export const AppsList = () => {
         platforms={platforms}
         price_overview={price_overview}
         header_image={header_image}
+        categories={categories}
       />
     ));
 

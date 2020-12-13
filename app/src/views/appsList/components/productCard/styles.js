@@ -19,6 +19,7 @@ export const useStyles = makeStyles(
       display: 'flex',
       backgroundColor: fade(black, 0.2),
       '&:hover': {
+        color: black,
         backgroundColor: fade(lightBlue, 0.6),
       },
     },
@@ -52,6 +53,13 @@ export const useStyles = makeStyles(
     },
     noDiscountPrice: {
       justifyContent: 'flex-end',
+    },
+    categoriesContainer: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    category: {
+      color: fade(secondary, 0.2),
     },
     '@media (max-width: 768px)': {
       price: {
